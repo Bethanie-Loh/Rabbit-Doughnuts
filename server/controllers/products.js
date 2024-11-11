@@ -101,8 +101,8 @@ router.delete("/:id", auth, isAdmin, async (req, res) => {
 });
 
 //ISACTIVE
-router.patch("/:id", auth, isAdmin, async (req, res) => {
-  return console.log('hi');
+router.put("/active/:id", auth, isAdmin, async (req, res) => {
+  console.log('hi');
   try {
     const product = await Product.findById(req.params.id);
     if (!product) return res.json({ msg: "Product does not exist" });
